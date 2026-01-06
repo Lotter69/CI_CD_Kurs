@@ -1,0 +1,14 @@
+routers:
+  hosts:
+    router1:
+      ansible_host: xxx.xxx.xxx.xxx
+    router2:
+      ansible_host: xxx.xxx.xxx.xxx
+  vars:
+    ansible_network_os: ios
+    ansible_user: xxxx
+    ansible_password: xxxx
+    ansible_connection: network_cli
+    ansible_become: yes
+    ansible_become_method: enable
+    ansible_become_password: xxxx

@@ -1,0 +1,30 @@
+testbed:
+  credentials:
+    default:
+      username: #ersetzen
+      password: #ersetzen
+      enable:
+        password: #ersetzen
+
+devices:
+  Router1:
+    connections:
+      cli:
+        ip: #ersetzen
+        port: 22
+        protocol: ssh
+        # SSH ohne Host Key Checking
+        ssh_options: "-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
+    os: iosxe
+    type: iosxe
+
+  Router2:
+    connections:
+      cli:
+        ip: #ersetzen
+        port: 22
+        protocol: ssh
+        # SSH ohne Host Key Checking
+        ssh_options: "-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
+    os: iosxe
+    type: iosxe

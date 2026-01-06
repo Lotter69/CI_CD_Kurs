@@ -1,0 +1,350 @@
+annotations:
+  - border_color: '#00000000'
+    border_style: ''
+    color: '#808080FF'
+    rotation: 0
+    text_bold: false
+    text_content: 192.168.178.203/24
+    text_font: monospace
+    text_italic: false
+    text_size: 12
+    text_unit: pt
+    thickness: 1
+    type: text
+    x1: -240.0
+    y1: -80.0
+    z_index: 0
+  - border_color: '#00000000'
+    border_style: ''
+    color: '#808080FF'
+    rotation: 0
+    text_bold: false
+    text_content: 192.168.178.204/24
+    text_font: monospace
+    text_italic: false
+    text_size: 12
+    text_unit: pt
+    thickness: 1
+    type: text
+    x1: -240.0
+    y1: 160.0
+    z_index: 1
+  - border_color: '#00000000'
+    border_style: ''
+    color: '#808080FF'
+    rotation: 0
+    text_bold: false
+    text_content: |-
+      enapw: cisco
+      ssh username/pw: cisco/cisco
+    text_font: monospace
+    text_italic: false
+    text_size: 12
+    text_unit: pt
+    thickness: 1
+    type: text
+    x1: -400.0
+    y1: -200.0
+    z_index: 2
+  - border_color: '#00000000'
+    border_style: ''
+    color: '#808080FF'
+    rotation: 0
+    text_bold: false
+    text_content: Ins 192.168.178.0/24 gebrückt
+    text_font: monospace
+    text_italic: false
+    text_size: 12
+    text_unit: pt
+    thickness: 1
+    type: text
+    x1: 160.0
+    y1: 40.0
+    z_index: 3
+smart_annotations: []
+nodes:
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: "Building configuration...\n\nCurrent configuration : 3442 bytes\n\
+          !\n! Last configuration change at 16:10:24 UTC Mon Jan 5 2026\n!\nversion\
+          \ 17.16\nservice timestamps debug datetime msec\nservice timestamps log\
+          \ datetime msec\n!\nhostname Router1\n!\nboot-start-marker\nboot-end-marker\n\
+          !\n!\nno logging console\nno aaa new-model\n!\n!\n!\n!\n!\n!\n!\n!\n!\n\
+          !\n!\n!\n!\nno ip domain lookup\nip domain name netacad.com\nip cef\nlogin\
+          \ on-success log\nno ipv6 cef\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\ncrypto pki\
+          \ trustpoint TP-self-signed-131184646\n enrollment selfsigned\n subject-name\
+          \ cn=IOS-Self-Signed-Certificate-131184646\n revocation-check none\n rsakeypair\
+          \ TP-self-signed-131184646\n hash sha512\n!\n!\ncrypto pki certificate chain\
+          \ TP-self-signed-131184646\n certificate self-signed 01\n  3082032E 30820216\
+          \ A0030201 02020101 300D0609 2A864886 F70D0101 0D050030\n  30312E30 2C060355\
+          \ 04030C25 494F532D 53656C66 2D536967 6E65642D 43657274\n  69666963 6174652D\
+          \ 31333131 38343634 36301E17 0D323630 31303530 38303135\n  325A170D 33363031\
+          \ 30353038 30313532 5A303031 2E302C06 03550403 0C25494F\n  532D5365 6C662D53\
+          \ 69676E65 642D4365 72746966 69636174 652D3133 31313834\n  36343630 82012230\
+          \ 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02\n  82010100 BE2C92B6\
+          \ F51B4BE6 9F54AA66 9AEABB37 6C81B79D BC2D7BD7 8EA0CFA5\n  A172DA01 4B64BB03\
+          \ 3F1572CB 0EB47595 498D874A C7BFE7D1 107C0043 85BBBCC4\n  FFE22C4F C569727D\
+          \ AA0A22E9 1B136B8C CC39259F 6111FD3C EFC118CA 1784C42D\n  255A6DCE 0CEE2F54\
+          \ 0865F5F1 3C005971 08E8850F C2E65F9B 4C81AFD3 E8BDD0D9\n  964EB301 F66B71D2\
+          \ E7254D6A 25F84E23 F413E3F7 F165943A DD8EE0B6 CE28A179\n  68130825 B0BA1A59\
+          \ D0D3D106 3E2CFEB4 DEFDF5D8 A05B42DE 1E09F1C5 CA1CB977\n  5C40D179 D30E7B50\
+          \ 3B53BC75 91460AB3 AC3C9246 04B9EC77 DF2671D1 B978322D\n  3A464879 AC6EB981\
+          \ C3D157FD 6B0C7702 367CF475 28095C0E 63F9E04F B8B6A750\n  FE0704BF 02030100\
+          \ 01A35330 51301D06 03551D0E 04160414 96723AD0 B4DC660A\n  47F4F94E 749D2159\
+          \ E15ADDFB 301F0603 551D2304 18301680 1496723A D0B4DC66\n  0A47F4F9 4E749D21\
+          \ 59E15ADD FB300F06 03551D13 0101FF04 05300301 01FF300D\n  06092A86 4886F70D\
+          \ 01010D05 00038201 01003526 DFD783DA EA313571 A7A5F953\n  9FD1AB75 1E8EB677\
+          \ 6A1F896A DEB4993C F165EB36 0B0049DF 547AADEE 97D575A9\n  3EA5968C CAE12764\
+          \ A0543CCB 44A4D5B0 5CEF5251 7066D93C B905E0E6 936DCADA\n  3A6EC7DC 7E56A6B2\
+          \ 6A651264 CE34CD82 BFCD27F8 AFE3AC65 64A15CC4 7907078D\n  B07FF416 33C0B092\
+          \ BE61DCFE AABB609A 1B30D8E5 1DF4F6FD 84151475 9324CBC3\n  E770BF1F A55B3B89\
+          \ 75CAB439 DF40FDD1 E81D0039 0EADFB4A EE8867BA 03C25DE5\n  11FC17A9 FEECBC6C\
+          \ 4FA6E55E 14E29F7B 690E9D25 DFF3BCB3 C571F4EC 020042D9\n  F735C521 97EF6ADA\
+          \ 9FF8CEB6 498D2F21 E25FAE48 B99EB434 19DCCD32 F944DE41\n  2B6DFECE FBB7F048\
+          \ 5FB88C05 7B16F373 6AF1\n  \tquit\n!\n!\nmemory free low-watermark processor\
+          \ 79983\n!\n!\nspanning-tree mode rapid-pvst\n!\nenable secret 9 $9$prU7XPMfwrLdJ.$69lDOO0On6/gHnQwWbfzxC2AS2ozgPQtKOxX8Qdr2QU\n\
+          !\nusername cisco privilege 15 secret 9 $9$nVBo5uJEW4ZqlU$0ziZG6paUaHWl/5b5nIkP7X8FsBuelk8P0jLyeecwN.\n\
+          !\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\ninterface\
+          \ Ethernet0/0\n no ip address\n shutdown\n!\ninterface Ethernet0/1\n ip\
+          \ address 192.168.178.203 255.255.255.0\n!\ninterface Ethernet0/2\n no ip\
+          \ address\n shutdown\n!\ninterface Ethernet0/3\n no ip address\n shutdown\n\
+          !\nip forward-protocol nd\nip forward-protocol udp\n!\n!\nip http server\n\
+          ip http secure-server\nip route 0.0.0.0 0.0.0.0 192.168.178.1\nip ssh bulk-mode\
+          \ 131072\nno logging btrace\n!\n!\n!\ncontrol-plane\n!\n!\n!\nline con 0\n\
+          \ exec-timeout 0 0\n logging synchronous\nline aux 0\nline vty 0 4\n exec-timeout\
+          \ 0 0\n login local\n transport input ssh\n!\n!\n!\n!\nend"
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n0
+    image_definition: null
+    label: Router1
+    node_definition: iol-xe
+    parameters: {}
+    ram: null
+    tags: []
+    x: -280
+    y: -40
+    interfaces:
+      - id: i0
+        label: Loopback0
+        mac_address: null
+        type: loopback
+      - id: i1
+        label: Ethernet0/0
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i2
+        label: Ethernet0/1
+        mac_address: null
+        type: physical
+        slot: 1
+      - id: i3
+        label: Ethernet0/2
+        mac_address: null
+        type: physical
+        slot: 2
+      - id: i4
+        label: Ethernet0/3
+        mac_address: null
+        type: physical
+        slot: 3
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: "Building configuration...\n\nCurrent configuration : 3442 bytes\n\
+          !\n! Last configuration change at 16:10:25 UTC Mon Jan 5 2026\n!\nversion\
+          \ 17.16\nservice timestamps debug datetime msec\nservice timestamps log\
+          \ datetime msec\n!\nhostname Router2\n!\nboot-start-marker\nboot-end-marker\n\
+          !\n!\nno logging console\nno aaa new-model\n!\n!\n!\n!\n!\n!\n!\n!\n!\n\
+          !\n!\n!\n!\nno ip domain lookup\nip domain name netacad.com\nip cef\nlogin\
+          \ on-success log\nno ipv6 cef\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\ncrypto pki\
+          \ trustpoint TP-self-signed-131184647\n enrollment selfsigned\n subject-name\
+          \ cn=IOS-Self-Signed-Certificate-131184647\n revocation-check none\n rsakeypair\
+          \ TP-self-signed-131184647\n hash sha512\n!\n!\ncrypto pki certificate chain\
+          \ TP-self-signed-131184647\n certificate self-signed 01\n  3082032E 30820216\
+          \ A0030201 02020101 300D0609 2A864886 F70D0101 0D050030\n  30312E30 2C060355\
+          \ 04030C25 494F532D 53656C66 2D536967 6E65642D 43657274\n  69666963 6174652D\
+          \ 31333131 38343634 37301E17 0D323630 31303530 38303135\n  365A170D 33363031\
+          \ 30353038 30313536 5A303031 2E302C06 03550403 0C25494F\n  532D5365 6C662D53\
+          \ 69676E65 642D4365 72746966 69636174 652D3133 31313834\n  36343730 82012230\
+          \ 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02\n  82010100 D1C9E018\
+          \ 8B0FB32E E7F782BC 93039C85 FCFA3525 79E93877 41371BB5\n  1043A36A 4877E8B3\
+          \ 18AE42BF 8B5068E8 31381D01 115DD430 97428FE3 B56161A7\n  9BF69252 511DAC5A\
+          \ E63247BC BCF66F33 814C18A8 27CBCBCE 92707BB9 9655B4FA\n  6F8C12D0 491BB992\
+          \ 94415227 627519DE C509AD7B 2EA617DA 6CB06E01 CA1390A1\n  E5FC2610 19D1B364\
+          \ 1ED2BBB9 8A8A490A F43933FE 9D50A0B5 B3E07F97 3CA36AA8\n  DFABA33A AFC08C0D\
+          \ F0F56299 70A2D3E1 740F6AC7 22B9C2BD 08D56665 D2CC8E75\n  DAB2A307 5FDBFCCE\
+          \ 4BBF0EA3 CCD7D238 4E52B7CA 34264982 C5271041 757CE625\n  7EF41A64 6823D71A\
+          \ 9FD64048 4344B7B3 5D6E67AB DCF1A40C 5665AAB0 F1364205\n  8FF47535 02030100\
+          \ 01A35330 51301D06 03551D0E 04160414 39A4A0ED 4108A5F5\n  03C19749 3E6E0595\
+          \ 4BCF3884 301F0603 551D2304 18301680 1439A4A0 ED4108A5\n  F503C197 493E6E05\
+          \ 954BCF38 84300F06 03551D13 0101FF04 05300301 01FF300D\n  06092A86 4886F70D\
+          \ 01010D05 00038201 01006717 C22A25F6 A24877B2 0E4EDCA5\n  465B5FA7 DDB77F11\
+          \ F7B168D2 F730C01E C25A24F4 E6EB401C 05609293 8B082DD9\n  4D0863F2 3DB9A852\
+          \ 14910584 EE3F9F54 33C55CB8 FE688082 BEA2B2CF 389D88E9\n  78089261 F60C5780\
+          \ 4402034D 6B1F74C0 7BA7244A 0378010C 123C80E4 720FFA15\n  4652A3BB 287D8EBF\
+          \ 32A59D02 7E6BB03E 5E60E6BE 70CBE9CF ED365145 F8C88131\n  5BB6144C 747C9E1A\
+          \ 872498F6 5CB95DCC A7C0D3DE C15EF8EC B4CAEB8A 1135B71D\n  F3260531 32091778\
+          \ 6348EEB0 297C5B5C 277B90D4 594ECAF8 67922A12 E855D9B8\n  D797DDD5 1E466E89\
+          \ 81FEED9A A8A8D1AB 9CA4B09C 7C56D0AD F26FB68A 3535BDEA\n  4CC4E8E0 A0FDCF60\
+          \ E9AFC89B 08716E18 B6FB\n  \tquit\n!\n!\nmemory free low-watermark processor\
+          \ 79983\n!\n!\nspanning-tree mode rapid-pvst\n!\nenable secret 9 $9$gqXcHwCpWmqjy.$LAsv1tyq.ktK0QXKYJ.rNhTYj40DfI7XI4xYD8ysDFA\n\
+          !\nusername cisco privilege 15 secret 9 $9$l06ElobAaR2otk$3DbIrUD8/bEJfTRo9lcGlug4xmbTFjdExOdfnAG9LrQ\n\
+          !\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\ninterface\
+          \ Ethernet0/0\n no ip address\n shutdown\n!\ninterface Ethernet0/1\n ip\
+          \ address 192.168.178.204 255.255.255.0\n!\ninterface Ethernet0/2\n no ip\
+          \ address\n shutdown\n!\ninterface Ethernet0/3\n no ip address\n shutdown\n\
+          !\nip forward-protocol nd\nip forward-protocol udp\n!\n!\nip http server\n\
+          ip http secure-server\nip route 0.0.0.0 0.0.0.0 192.168.178.1\nip ssh bulk-mode\
+          \ 131072\nno logging btrace\n!\n!\n!\ncontrol-plane\n!\n!\n!\nline con 0\n\
+          \ exec-timeout 0 0\n logging synchronous\nline aux 0\nline vty 0 4\n exec-timeout\
+          \ 0 0\n login local\n transport input ssh\n!\n!\n!\n!\nend"
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n1
+    image_definition: null
+    label: Router2
+    node_definition: iol-xe
+    parameters: {}
+    ram: null
+    tags: []
+    x: -280
+    y: 120
+    interfaces:
+      - id: i0
+        label: Loopback0
+        mac_address: null
+        type: loopback
+      - id: i1
+        label: Ethernet0/0
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i2
+        label: Ethernet0/1
+        mac_address: null
+        type: physical
+        slot: 1
+      - id: i3
+        label: Ethernet0/2
+        mac_address: null
+        type: physical
+        slot: 2
+      - id: i4
+        label: Ethernet0/3
+        mac_address: null
+        type: physical
+        slot: 3
+  - boot_disk_size: null
+    configuration: []
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n2
+    image_definition: null
+    label: Switch
+    node_definition: unmanaged_switch
+    parameters: {}
+    ram: null
+    tags: []
+    x: -120
+    y: 40
+    interfaces:
+      - id: i0
+        label: port0
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i1
+        label: port1
+        mac_address: null
+        type: physical
+        slot: 1
+      - id: i2
+        label: port2
+        mac_address: null
+        type: physical
+        slot: 2
+      - id: i3
+        label: port3
+        mac_address: null
+        type: physical
+        slot: 3
+      - id: i4
+        label: port4
+        mac_address: null
+        type: physical
+        slot: 4
+      - id: i5
+        label: port5
+        mac_address: null
+        type: physical
+        slot: 5
+      - id: i6
+        label: port6
+        mac_address: null
+        type: physical
+        slot: 6
+      - id: i7
+        label: port7
+        mac_address: null
+        type: physical
+        slot: 7
+  - boot_disk_size: null
+    configuration:
+      - name: default
+        content: System Bridge
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n3
+    image_definition: null
+    label: ins reale LAN
+    node_definition: external_connector
+    parameters: {}
+    ram: null
+    tags: []
+    x: 120
+    y: 40
+    interfaces:
+      - id: i0
+        label: port
+        mac_address: null
+        type: physical
+        slot: 0
+links:
+  - id: l0
+    n1: n0
+    n2: n2
+    i1: i2
+    i2: i0
+    conditioning: {}
+    label: Router1-Ethernet0/1<->Switch-port0
+  - id: l1
+    n1: n1
+    n2: n2
+    i1: i2
+    i2: i1
+    conditioning: {}
+    label: Router2-Ethernet0/1<->Switch-port1
+  - id: l2
+    n1: n2
+    n2: n3
+    i1: i2
+    i2: i0
+    conditioning: {}
+    label: Switch-port2<->ins reale LAN-port
+lab:
+  description: Produktiv-Netz in einer CI/CD-Pipeline, dem bei Konfigurationsveränderungen
+    ein Test-Netz vorgeschaltet ist.
+  notes: ''
+  title: Produktiv-Netz (dauerhaft in Betrieb)-Vorlage
+  version: 0.3.0

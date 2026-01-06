@@ -1,0 +1,41 @@
+---
+- name: Configure ACL on Cisco routers
+  hosts: routers
+  gather_facts: no
+
+  tasks:
+    - name: Include ACL vars
+      include_vars: '../acl-config.yaml'
+
+    - name: Remove old ACL from interface (if exists)
+      cisco.ios.ios_config:
+        lines:
+          - no ip access-group {{ acl[0].acls[0].name }} in
+        parents: interface {{ acl_interface[0].name }}
+      ignore_errors: yes
+
+    - name: Remove old ACL (if exists)
+      cisco.ios.ios_config:
+        lines:
+          - no ip access-list extended {{ acl[0].acls[0].name }}
+      ignore_errors: yes
+
+    - name: Build ACL rules from config
+      set_fact:
+        acl_rules: "{{ acl_rules | default([]) + [item.sequence | string + ' ' + item.grant + ' ' + item.protocol + ' ' + item.source.address + ' ' + item.destination.address + ((' eq ' + item.destination.port_protocol.eq) if item.destination.port_protocol is defined else '')] }}"
+      loop: "{{ acl[0].acls[0].aces }}"
+      loop_control:
+        label: "{{ item.sequence }}"
+
+    - name: Create ACL
+      cisco.ios.ios_config:
+        lines: "{{ acl_rules }}"
+        parents: ip access-list extended {{ acl[0].acls[0].name }}
+        save_when: modified
+
+    - name: Apply ACL to interface
+      cisco.ios.ios_config:
+        lines:
+          - ip access-group {{ acl[0].acls[0].name }} {{ acl_interface[0].access_groups[0].acls[0].direction }}
+        parents: interface {{ acl_interface[0].name }}
+        save_when: modified
