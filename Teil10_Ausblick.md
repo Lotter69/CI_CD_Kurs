@@ -40,6 +40,16 @@ Nach diesem Lab können Sie:
    - Rollback-Mechanismen
    - Staging-Umgebung
 
+9. **Sicherheit ergänzen**
+   - SSH Pubkey Authentifizierung
+   - Ansible Vault (Verschlüsselung sensibler Daten)
+
+10. **Skalierbarkeit**
+   - Variablen und Facts in Playbook einsetzen
+        - Gruppenvariablen
+        - Hostspezifische Variablen
+   - Wartbarkeit komplexer Konfigurationen sicherstellen mit Vorlagen (Jinja2-Templates) sicherstellen
+   - Code-Organisation bei großen Projekten mit Rollen strukturieren (Rollen für Aufgabe: z. B. Rolle für ACL-management, Rolle für Backups, Rolle für NTP-Konfiguration)
 ---
 
 ## Autoren und Urheberrecht

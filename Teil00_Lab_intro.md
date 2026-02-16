@@ -62,6 +62,8 @@ Produktiv-Umgebung ist aktualisiert!
 
 ### Labor-Umgebung
 
+> **Wichtiger Hinweis:** In der Laborübung soll das Kernkonzept einer DevNet CI/CD-Pipeline mit dem Konfigurationsmanagement-Werkzeug Ansible eingeübt werden. Aspekte der weiteren Skalierbarkeit und Netzwerksicherheit sind an dieser Stelle nicht berücksichtigt, können jedoch in weiteren [Ausbaustufen](Teil10_Ausblick.md) behandelt werden. 
+
 **In diesem Lab simulieren wir ein realistisches Szenario:**
 
 | Umgebung | Beschreibung | Technologie | Automatisierung |
