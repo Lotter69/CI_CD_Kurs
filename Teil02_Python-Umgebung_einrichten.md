@@ -47,6 +47,6 @@ python -c "from virl2_client import ClientLibrary; print('virl2-client OK')"
 ---
 ![line](images/banner.png)
 <p align="center">
-<a href="../01-why-automation/1.md"><img src="images/previous.png" width="150px"></a>
-<a href="../02-intro-to-apis/1.md"><img src="images/next.png" width="150px"></a>
+<a href="Teil01_Voraussetzungen.md"><img src="images/previous.png" width="150px"></a>
+<a href="Teil03_CML-Test-Netzwerk-Setup.md"><img src="images/next.png" width="150px"></a>
 </p>

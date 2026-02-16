@@ -254,6 +254,6 @@ git push origin test
 
 ![line](images/banner.png)
 <p align="center">
-<a href="../01-why-automation/1.md"><img src="images/previous.png" width="150px"></a>
-<a href="../02-intro-to-apis/1.md"><img src="images/next.png" width="150px"></a>
+<a href="Teil06_pyATS_Test_erstellen.md"><img src="images/previous.png" width="150px"></a>
+<a href="Teil08_Produktiv-Netz_bereitstellen_Deployment.md"><img src="images/next.png" width="150px"></a>
 </p>

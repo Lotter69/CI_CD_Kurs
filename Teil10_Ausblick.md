@@ -49,5 +49,5 @@ Nach diesem Lab können Sie:
 
 ![line](images/banner.png)
 <p align="center">
-<a href="../01-why-automation/1.md"><img src="images/previous.png" width="150px"></a>
+<a href="Teil09_ACL_Netzwerkkonfiguration_veraendern.md"><img src="images/previous.png" width="150px"></a>
 </p>
