@@ -198,11 +198,6 @@ Nach diesem Lab können Sie:
 
 ---
 
-## Autoren und Urheberrecht
-- Michael Lotter
-- Date: 01/2026
-- Version: v2.0
-
 ![line](images/banner.png)
 <p align="center">
 <a href="../01-why-automation/1.md"><img src="images/previous.png" width="150px"></a>
