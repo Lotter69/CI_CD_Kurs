@@ -187,7 +187,7 @@ Nach Abschluss dieses Labs können Sie:
 > **Wichtiger Hinweis:** Zur Erprobung der Laborübung wurden die priv. IP-Adressen eines Heimnetzwerks verwendet: CML-Server `192.168.178.31`. Das virtualisierte Netz ist mit dem realen Netz gebridged. Beide Netze verwenden also das gleiche IP-Netz `192.168.178.0/24`. Sie müssen die IPs an Ihre Umgebung entsprechend anpassen!
 
 ---
-![line](../images/banner.png)
+![line](images/banner.png)
 <p align="center">
 <a href="../01-why-automation/1.md"><img src="images/previous.png" width="150px"></a>
 <a href="../02-intro-to-apis/1.md"><img src="images/next.png" width="150px"></a>
