@@ -189,6 +189,6 @@ Nach Abschluss dieses Labs können Sie:
 ---
 ![line](images/banner.png)
 <p align="center">
-<a href="../01-why-automation/1.md"><img src="images/previous.png" width="150px"></a>
-<a href="../02-intro-to-apis/1.md"><img src="images/next.png" width="150px"></a>
+<a href="README.md"><img src="images/previous.png" width="150px"></a>
+<a href="Teil01_Voraussetzungen.md"><img src="images/next.png" width="150px"></a>
 </p>
