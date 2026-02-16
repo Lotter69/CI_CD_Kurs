@@ -180,7 +180,7 @@ Nach Abschluss dieses Labs können Sie:
 3. **Produktiv-Netzwerk Router IPs:**
    - Router 1: z.B. `192.168.178.203`
    - Router 2: z.B. `192.168.178.204`
-   - [CML-yaml-Datei](../01-why-automation/code/Produktiv-Netz_(dauerhaft_in_Betrieb)-Vorlage.yaml), geeignet für cml4free
+   - [CML-yaml-Datei](code/Produktiv-Netz_(dauerhaft_in_Betrieb)-Vorlage.yaml), geeignet für cml4free
 
 ![line](./images/prod_net_permanent.png)
 
