@@ -1,5 +1,5 @@
 ## Teil 8: Produktiv-Netz Bereitstellen (Deployment)
-
+![line](images/banner.png)
 ### Schritt 32: Pull Request & Merge
 
 **Auf GitHub:**

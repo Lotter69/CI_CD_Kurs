@@ -1,6 +1,6 @@
 
 ## Teil 1: Entwicklungsumgebung einrichten
-
+![line](images/banner.png)
 ### Schritt 1: System-Pakete installieren
 
 ```bash

@@ -1,5 +1,5 @@
 ## Teil 9: ACL verändern (erweitern)
-
+![line](images/banner.png)
 Jetzt fügen wir eine neue Regel hinzu, um den Workflow zu testen.
 
 ### Schritt 34: Lokales Repo aktualisieren

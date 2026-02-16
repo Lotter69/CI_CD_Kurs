@@ -1,5 +1,5 @@
 ## Teil 2: Python-Umgebung einrichten
-
+![line](images/banner.png)
 ### Schritt 7: Virtual Environment erstellen
 
 ```bash

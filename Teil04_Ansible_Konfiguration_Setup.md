@@ -1,6 +1,6 @@
 
 ## Teil 4: Ansible-Konfiguration Setup
-
+![line](images/banner.png)
 ### Schritt 12: Ansible-Verzeichnis erstellen
 
 ```bash

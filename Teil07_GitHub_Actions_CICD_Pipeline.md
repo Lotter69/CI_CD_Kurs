@@ -1,6 +1,6 @@
 
 ## Teil 7: GitHub Actions CI/CD Pipeline
-
+![line](images/banner.png)
 ### Schritt 26: GitHub Runner installieren
 
 **Wichtig:** Der GitHub Runner muss auf demselben System wie CML installiert sein oder Netzwerkzugriff auf CML haben!

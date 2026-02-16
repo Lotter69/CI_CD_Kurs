@@ -1,5 +1,5 @@
 ## Teil 5: ACL-Konfiguration
-
+![line](images/banner.png)
 ### Schritt 17: ACL-Konfigurationsdatei erstellen
 
 ```bash
