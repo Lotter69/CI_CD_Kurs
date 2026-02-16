@@ -1,5 +1,5 @@
 # Lab - Erstellen einer CI/CD-Pipeline zum Testen der Ansible-Konfiguration in einem CML-Netzwerk
-![line](../images/banner.png)
+![line](images/banner.png)
 
 **Angepasst für: Linux Mint + GitHub + CML Personal 2.9**
 
