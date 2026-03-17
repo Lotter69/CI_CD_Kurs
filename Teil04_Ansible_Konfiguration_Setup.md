@@ -65,47 +65,119 @@ nano deploy-acl-config.yaml
 
 **Inhalt:**
 ```yaml
----
+----
+# Ansible Playbook: ACL-Konfiguration auf Cisco-Router deployen
+# Wird aufgerufen mit:
+#   ansible-playbook -i ansible/test-network.yaml ansible/deploy-acl-config.yaml
+#   ansible-playbook -i ansible/production-network.yaml ansible/deploy-acl-config.yaml
+
 - name: Configure ACL on Cisco routers
-  hosts: routers
-  gather_facts: no
+  hosts: routers        # Zielgruppe aus dem Inventar (test-network.yaml / production-network.yaml)
+  gather_facts: no      # Keine automatische Inventarisierung des Routers – spart Zeit
 
   tasks:
+
+    # -------------------------------------------------------------------------
+    # SCHRITT 1: Konfiguration einlesen
+    # -------------------------------------------------------------------------
     - name: Include ACL vars
+      # Liest acl-config.yaml ein und stellt alle darin definierten Variablen
+      # (acl, acl_interface) für die nachfolgenden Tasks zur Verfügung.
       include_vars: '../acl-config.yaml'
 
+
+    # -------------------------------------------------------------------------
+    # SCHRITT 2: Alte ACL vom Interface entfernen
+    # -------------------------------------------------------------------------
     - name: Remove old ACL from interface (if exists)
       cisco.ios.ios_config:
         lines:
+          # IOS-Befehl: Entfernt die ACL-Zuweisung vom Interface.
+          # {{ acl[0].acls[0].name }} → ACL-Name aus acl-config.yaml, z.B. "110"
           - no ip access-group {{ acl[0].acls[0].name }} in
+        # parents: bestimmt den Konfigurationskontext, d.h. den übergeordneten
+        # IOS-Befehl, unter dem die lines ausgeführt werden.
+        # {{ acl_interface[0].name }} → Interface-Name aus acl-config.yaml, z.B. "Ethernet0/1"
         parents: interface {{ acl_interface[0].name }}
+      # ignore_errors: Falls die ACL noch nicht existiert, wird der Fehler
+      # ignoriert und das Playbook läuft weiter – idempotentes Verhalten.
       ignore_errors: yes
 
+
+    # -------------------------------------------------------------------------
+    # SCHRITT 3: Alte ACL-Definition löschen
+    # -------------------------------------------------------------------------
     - name: Remove old ACL (if exists)
       cisco.ios.ios_config:
         lines:
+          # IOS-Befehl: Löscht die gesamte ACL-Definition.
+          # Notwendig, damit veraltete Regeln nicht erhalten bleiben.
           - no ip access-list extended {{ acl[0].acls[0].name }}
-      ignore_errors: yes
+      ignore_errors: yes  # Gleiche Logik wie oben: ACL muss nicht existieren
 
+
+    # -------------------------------------------------------------------------
+    # SCHRITT 4: ACL-Regeln aus acl-config.yaml zusammenbauen
+    # -------------------------------------------------------------------------
     - name: Build ACL rules from config
+      # set_fact erstellt zur Laufzeit eine neue Variable (acl_rules).
+      # Sie enthält am Ende eine Liste von IOS-Befehlen, z.B.:
+      #   ["20 deny tcp any any eq www", "40 permit ip any any"]
       set_fact:
+        # acl_rules wird schrittweise aufgebaut: Bei jedem Loop-Durchlauf wird
+        # ein neuer Eintrag an die bestehende Liste angehängt.
+        # default([]) stellt sicher, dass die Variable beim ersten Durchlauf
+        # als leere Liste startet.
         acl_rules: "{{ acl_rules | default([]) + [item.sequence | string + ' ' + item.grant + ' ' + item.protocol + ' ' + item.source.address + ' ' + item.destination.address + ((' eq ' + item.destination.port_protocol.eq) if item.destination.port_protocol is defined else '')] }}"
+        # Aufbau eines Regeleintrags Schritt für Schritt:
+        #   item.sequence          → Sequenznummer,      z.B. "20"
+        #   item.grant             → Aktion,             z.B. "deny" oder "permit"
+        #   item.protocol          → Protokoll,          z.B. "tcp" oder "ip"
+        #   item.source.address    → Quell-Adresse,      z.B. "any"
+        #   item.destination.address → Ziel-Adresse,     z.B. "any"
+        #   item.destination.port_protocol.eq (optional) → Port, z.B. "www" oder "telnet"
+        #     → wird nur ergänzt, wenn port_protocol in der Regel definiert ist
+
+      # loop iteriert über alle Einträge unter aces: in acl-config.yaml.
+      # Jede Regel (deny www, permit ip, ...) wird einmal durchlaufen.
       loop: "{{ acl[0].acls[0].aces }}"
+
       loop_control:
+        # label sorgt dafür, dass in der Ansible-Ausgabe nur die Sequenznummer
+        # angezeigt wird (statt des gesamten loop-Objekts) – bessere Lesbarkeit.
         label: "{{ item.sequence }}"
 
+
+    # -------------------------------------------------------------------------
+    # SCHRITT 5: ACL auf dem Router anlegen
+    # -------------------------------------------------------------------------
     - name: Create ACL
       cisco.ios.ios_config:
-        lines: "{{ acl_rules }}" 
+        # lines enthält die in Schritt 4 gebaute Regelliste.
+        # Ansible übergibt sie als einzelne IOS-Befehle an den Router.
+        lines: "{{ acl_rules }}"
+        # parents setzt den Konfigurationskontext:
+        # Alle lines werden unterhalb von "ip access-list extended 110" ausgeführt.
         parents: ip access-list extended {{ acl[0].acls[0].name }}
+        # save_when: modified → Router speichert die Konfiguration nur,
+        # wenn tatsächlich eine Änderung vorgenommen wurde (effizient & sicher).
         save_when: modified
 
+
+    # -------------------------------------------------------------------------
+    # SCHRITT 6: ACL dem Interface zuweisen
+    # -------------------------------------------------------------------------
     - name: Apply ACL to interface
       cisco.ios.ios_config:
         lines:
+          # IOS-Befehl: Weist die ACL dem Interface in der definierten Richtung zu.
+          # acl[0].acls[0].name    → ACL-Name,    z.B. "110"
+          # acl_interface[0].access_groups[0].acls[0].direction → Richtung, z.B. "in"
           - ip access-group {{ acl[0].acls[0].name }} {{ acl_interface[0].access_groups[0].acls[0].direction }}
+        # Interface-Kontext, z.B. "interface Ethernet0/1"
         parents: interface {{ acl_interface[0].name }}
         save_when: modified
+
 ```
 
 **Hinweise zur Konfiguration**
