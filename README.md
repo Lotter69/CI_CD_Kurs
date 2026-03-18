@@ -1,6 +1,6 @@
 # Inhalt
 
-## [Teil000 - Ueberblick](Teil00_Lab_intro.md)
+## [Teil00 - Ueberblick](Teil00_Lab_intro.md)
 ## [Teil01 - Laborrechner vorbereiten](Teil01_Voraussetzungen.md)
 ## [Teil02 - venv vorbereiten](Teil02_Python-Umgebung_einrichten.md)
 ## [Teil03 - CML-Testnetzwerk Setup](Teil03_CML-Test-Netzwerk-Setup.md)
