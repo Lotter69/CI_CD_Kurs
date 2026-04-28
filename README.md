@@ -12,6 +12,11 @@
 ## [Teil09 - Netzwerkkonfiguration ändern (Ansible)](Teil09_ACL_Netzwerkkonfiguration_veraendern.md)
 ## [Teil10 - Ausblick und Skalierung](Teil10_Ausblick.md)
 
+## Autoren und Urheberrecht
+- Created by: Michael Lotter in Anlehnung an Lab "Create a CI/CD Pipeline for Testing Ansible Configuration in a CML Network" in "CML_Advanced_Networking_Options"
+- Date: 12/2025
+- Version: v1.0
+
 ![line](images/banner.png)
 <p align="center">
 <a href="Teil00_Lab_intro.md"><img src="images/next.png" width="150px"></a>
